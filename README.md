@@ -2,6 +2,9 @@
 
 > "Measure twice, cut once."
 
+## THIS IS A WIP!!!
+Cloned versions may not be usable, stable versions will be on the releases tab.
+
 ## Legal & Ethical Considerations
 Using Caliper to interact with unauthorized systems is illegal and unethical. This tool is meant solely for educational and research purposes within controlled environments where you have explicit permission. Acceptable use cases include:
 
