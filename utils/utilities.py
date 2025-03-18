@@ -4,6 +4,7 @@
 '''
 
 import random
+import sys
 
 '''
 Miscellaneus utilities such as version,
@@ -51,5 +52,35 @@ class Utilities:
         except Exception as e:
             return str(e)
         
+        
     def print_separator(char='-', length=40):
         print(char * length)
+
+
+    def print_success_msg(message: str):
+        # ANSI escape codes for green and gray
+        GREEN = "\033[32m"
+        GRAY = "\033[90m"
+        RESET = "\033[0m"
+        
+        print(f"{GREEN}[+] OK -> {RESET}{message}{RESET}")
+
+
+    def print_warning_msg(message: str):
+        # ANSI escape codes for yellow and gray
+        YELLOW = "\033[33m"
+        GRAY = "\033[90m"
+        RESET = "\033[0m"
+        
+        print(f"{YELLOW}[!] WARNING -> {RESET}{message}{RESET}")
+
+
+    def print_error_msg(message: str):
+        # ANSI escape codes for red and gray
+        RED = "\033[31m"
+        GRAY = "\033[90m"
+        RESET = "\033[0m"
+        
+        print(f"{RED}[x] ERROR -> {RESET}{message}{RESET}")
+        sys.exit()
+    
