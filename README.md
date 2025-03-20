@@ -1,6 +1,16 @@
 # Caliper
 
-> "Measure twice, cut once."
+```
+________  ________  ___       ___  ________  _______   ________     
+|\   ____\|\   __  \|\  \     |\  \|\   __  \|\  ___ \ |\   __  \    
+\ \  \___|\ \  \|\  \ \  \    \ \  \ \  \|\  \ \   __/|\ \  \|\  \   
+ \ \  \    \ \   __  \ \  \    \ \  \ \   ____\ \  \_|/_\ \   _  _\  
+  \ \  \____\ \  \ \  \ \  \____\ \  \ \  \___|\ \  \_|\ \ \  \\  \| 
+   \ \_______\ \__\ \__\ \_______\ \__\ \__\    \ \_______\ \__\\ _\ 
+    \|_______|\|__|\|__|\|_______|\|__|\|__|     \|_______|\|__|\|__|
+```
+
+Project by XoanOuteiro @ The Smoking GNU (thesmokinggnu.org)
 
 ## THIS IS A WIP!!!
 Cloned versions may not be usable, stable versions will be on the releases tab.
