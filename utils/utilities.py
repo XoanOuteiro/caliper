@@ -83,4 +83,12 @@ class Utilities:
         
         print(f"{RED}[x] ERROR -> {RESET}{message}{RESET}")
         sys.exit()
+
+    def print_result_msg(message: str):
+        # ANSI escape codes for blue and gray
+        BLUE = "\033[34m"
+        GRAY = "\033[90m"
+        RESET = "\033[0m"
     
+        print(f"{BLUE}[!] RESULT -> {RESET}{message}{RESET}")
+

