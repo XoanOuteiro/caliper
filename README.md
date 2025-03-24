@@ -15,6 +15,19 @@ Project by XoanOuteiro @ The Smoking GNU (thesmokinggnu.org)
 ## THIS IS A WIP!!!
 Cloned versions may not be usable, stable versions will be on the releases tab.
 
+Current development state:
+
+| Mode | Vector/Syntax | State |
+| --- | --- | --- |
+| VEC | JDI | :x: - TBI |
+| VEC | OHT | :x: - TBI |
+| VEC | HVS | :x: - TBI |
+| VEC | RPC | :x: - TBI |
+| EVAL | HTML | :white_check_mark: |
+| EVAL | SQL | :white_check_mark: |
+
+TBI = To Be Implemented
+
 ## Legal & Ethical Considerations
 Using Caliper to interact with unauthorized systems is illegal and unethical. This tool is meant solely for educational and research purposes within controlled environments where you have explicit permission. Acceptable use cases include:
 
@@ -50,12 +63,5 @@ Payloads that are not case-sensitive (such as potential SQLi) can sometimes pass
 
 ## Evaluation Mode
 Focus on finding specific parts of a request that are either not blocked or reflected by the WAF. Instead of just trying to bypass the WAF with specific data (such as with Vector mode), you can use Eval Mode to set a GET parameter to identify useful items that can slip through. This is especially helpful for creating payloads like XSS attacks.
-
-These useful items could include:
-
-- JavaScript snippets
-- HTML tags
-- SQL fragments
-- Special characters
 
 Eval Mode helps you figure out what works and makes it easier to generate the right payloads for your testing.
