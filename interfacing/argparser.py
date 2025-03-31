@@ -18,7 +18,7 @@ class Argparser:
     mode_options = ["VEC", "EVAL"]
     verb_options = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     vector_options = ["JDI", "OHT", "HVS", "RPC"]
-    eval_options = ["HTML","SQL"]
+    eval_options = ["HTML","SQL","LFI"]
 
     parser = None  # For argparse instance, is assigned at constructor
 
