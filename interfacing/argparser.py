@@ -79,6 +79,7 @@ class Argparser:
         # Mandatory flagged arguments
         self.parser.add_argument("-u", "--url", type=str, help="The endpoint to attack, in case of GET verb you will need to identify target parameter via -p/--parameter.")
         self.parser.add_argument("-s", "--segment", type=str, help="The string which caused WAF blockage")
+        self.parser.add_argument("-pbf", "--post-body-file", type=str, help="The file containing the POST-like request body to use, must have the term FUZZ in the area that you want the vectorized segment to be")
         self.parser.add_argument("-c", "--code", type=str, help="The HTTP Response code that was given when being blocked by WAF (If its 200-like make sure to turn on content-matching)")
 
         self.parser.add_argument("-mc", "--match-content", action="store_true", help="Shows a success message if the content of the webpage changed between the initial test connection "
