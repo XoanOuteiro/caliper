@@ -25,6 +25,7 @@ Current development state:
 | VEC | RPC | :x: - TBI |
 | EVAL | HTML | :white_check_mark: |
 | EVAL | SQL | :white_check_mark: |
+| EVAL | LFI | :white_check_mark: |
 
 TBI = To Be Implemented
 
