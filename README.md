@@ -42,6 +42,27 @@ Additionally, improper use of Caliper could pose serious security risks, such as
 
 By using Caliper, you agree to use it ethically and legally. You take full responsibility for how this tool is used. This tool must never be used for unauthorized access, military applications or unlawful financial gain.
 
+## Installation
+
+1.  Clone the repository:
+
+    ``` bash
+    git clone https://github.com/XoanOuteiro/caliper
+    cd caliper
+    ```
+
+1. (Optional) In the event of missing dependencies, there are two options:
+    using a system-wide install (the script automatically detects Debian and Arch based OSs for the apropiate package manager):
+
+    ``` bash
+    chmod +x install.sh && ./install.sh
+    ```
+
+    Or if you are using a venv, via pip:
+
+    ``` bash
+    pip install -r requirements.txt
+    ```
 ## Evasion Vector Mode
 Focuses on finding methods to bypass WAF restrictions by targeting a user-defined string in an HTTP request. The user specifies the HTTP method to use, the evasion vector to employ, the string causing the WAF blockage, and the HTTP response code the WAF gives when the request is blocked. A successful bypass is determined when the HTTP response code changes after applying the vector, and if the match-content option is enabled, when the body of the response changes as well (useful if the WAF blockage response code is 200-like).
 
