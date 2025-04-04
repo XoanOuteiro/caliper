@@ -65,9 +65,8 @@ class Argparser:
         vec_parser.add_argument("Verb", type=str, help=f"For VEC mode, HTTP Verb to use: {str(self.verb_options)}", choices=self.verb_options)
         vec_parser.add_argument("Vector", type=str, help=f"For VEC mode, The evasion vector to attempt: {str(self.vector_options)}", choices=self.vector_options)
 
-        vec_parser.add_argument("-u", "--url", type=str, help="The endpoint to attack, in case of GET verb you will need to identify target parameter via -p/--parameter.")
-        vec_parser.add_argument("-s", "--segment", type=str, help="The string which caused WAF blockage")
-        vec_parser.add_argument("-pbf", "--post-body-file", type=str, help="The file containing the POST-like request body to use, must have the term FUZZ in the area that you want the vectorized segment to be")
+        vec_parser.add_argument("-s", "--segment", type=str, help="The string which caused WAF blockage (which you replaced by FUZZ in the request file")
+        vec_parser.add_argument("-rf", "--request-file", type=str, help="The file containing the POST-like request to use, must have the term FUZZ in the area that you want the vectorized segment to be. You can obtain a plain TXT request via tools like Burp Suite or Caido")
         vec_parser.add_argument("-c", "--code", type=str, help="The HTTP Response code that was given when being blocked by WAF (If its 200-like make sure to turn on content-matching)")
 
         vec_parser.add_argument("-mc", "--match-content", action="store_true", help="Shows a success message if the content of the webpage changed between the initial test connection (done with the base segment) and a vectorized segment connection."
