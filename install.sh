@@ -5,7 +5,7 @@ install_arch() {
 
 	echo "[+] Arch based OS detected, installing via pacman..."
 	# Update package list and install dependencies system-wide
-	sudo pacman -Sy python-requests python-tqdm
+	sudo pacman -Sy python-requests python-tqdm python-urllib3
 	echo "[+] Dependency install finished"
 
 }
@@ -15,7 +15,7 @@ install_debian() {
 	
 	echo "[+] Debian based OS detected, installing via apt..."
 	#Install systemwide packaged
-	sudo apt install -y python3-requests python3-tqdm
+	sudo apt install -y python3-requests python3-tqdm python3-urllib3
 	echo "[+] Dependecy install finished"
 }
 
