@@ -11,7 +11,6 @@ class Argparser:
     epilog_text = "Thanks for running!"
 
     mode_options = ["VEC", "EVAL"]
-    verb_options = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     vector_options = ["JDI", "OHT", "HVS", "RPC"]
     eval_options = ["HTML", "SQL", "LFI"]
 
@@ -26,9 +25,7 @@ class Argparser:
     def parse_options(self, args):
         # VEC MODE CHECKS
         if args.Mode == "VEC":
-            # Check Verb and Vector are set
-            if not args.Verb:
-                Utilities.print_error_msg("HTTP Verb is required on VEC mode")
+            # Check Vector is set
             if not args.Vector:
                 Utilities.print_error_msg("Vector is required on VEC mode")
 
@@ -62,7 +59,6 @@ class Argparser:
 
         # VEC Mode subparser
         vec_parser = subparsers.add_parser('VEC', help="Vectorization mode options")
-        vec_parser.add_argument("Verb", type=str, help=f"For VEC mode, HTTP Verb to use: {str(self.verb_options)}", choices=self.verb_options)
         vec_parser.add_argument("Vector", type=str, help=f"For VEC mode, The evasion vector to attempt: {str(self.vector_options)}", choices=self.vector_options)
 
         vec_parser.add_argument("-s", "--segment", type=str, help="The string which caused WAF blockage (which you should have replaced by FUZZ in the request file)")
