@@ -1,6 +1,7 @@
 import argparse
 from modules.evaluator import Evaluator
 from utils.utilities import Utilities
+from utils.reqhandler import ReqHandler
 
 '''
 Build and collect CLI arguments
@@ -28,6 +29,32 @@ class Argparser:
             # Check Vector is set
             if not args.Vector:
                 Utilities.print_error_msg("Vector is required on VEC mode")
+            else:
+                Utilities.print_success_msg(f"Caliper will instance {args.Vector} module")
+
+            if not args.protocol:
+                Utilities.print_error_msg("No HTTP/HTTPS protocol specified")
+
+            if not args.segment:
+                Utilities.print_error_msg("Segment is required on VEC mode")
+            else:
+                Utilities.print_success_msg(f"Set segment: {args.segment}")
+
+            if not args.code:
+                Utilities.print_error_msg("Code is required on VEC mode")
+            else:
+                Utilities.print_success_msg(f"Exploratory check will need to match response code: {args.code}")
+
+            if args.match_content:
+                Utilities.print_success_msg(f"Content matching is ON")
+            else:
+                Utilities.print_success_msg(f"Content matching is OFF")
+
+            if not args.request_file:
+                Utilities.print_error_msg("Request File is required on VEC mode")
+            else:
+                serialized_req = ReqHandler(args.request_file, args.protocol)
+
 
         # EVAL MODE CHECKS
         elif args.Mode == "EVAL":
@@ -61,6 +88,7 @@ class Argparser:
         vec_parser = subparsers.add_parser('VEC', help="Vectorization mode options")
         vec_parser.add_argument("Vector", type=str, help=f"For VEC mode, The evasion vector to attempt: {str(self.vector_options)}", choices=self.vector_options)
 
+        vec_parser.add_argument("-p","--protocol", type=str, help="The HTTP protocol type to use, can be HTTP or HTTPS", choices=["http","https"])
         vec_parser.add_argument("-s", "--segment", type=str, help="The string which caused WAF blockage (which you should have replaced by FUZZ in the request file)")
         vec_parser.add_argument("-rf", "--request-file", type=str, help="The file containing the POST-like request to use, must have the term FUZZ in the area that you want the vectorized segment to be. You can obtain a plain TXT request via tools like Burp Suite or Caido")
         vec_parser.add_argument("-c", "--code", type=str, help="The HTTP Response code that was given when being blocked by WAF (If its 200-like make sure to turn on content-matching)")
