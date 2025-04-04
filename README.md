@@ -87,3 +87,24 @@ Payloads that are not case-sensitive (such as potential SQLi) can sometimes pass
 Focus on finding specific parts of a request that are either not blocked or reflected by the WAF. Instead of just trying to bypass the WAF with specific data (such as with Vector mode), you can use Eval Mode to set a GET parameter to identify useful items that can slip through. This is especially helpful for creating payloads like XSS attacks.
 
 Eval Mode helps you figure out what works and makes it easier to generate the right payloads for your testing.
+
+For some examples:
+
+Testing for simple XSS bypassing with the HTML dictionary:
+
+``` bash
+python caliper.py EVAL --url https://xoanouteiro.dev?query=test&info=1 --parameter query --syntax-type HTML
+```
+Testing for path traversal and local file inclusion via the LFI dictionary:
+
+``` bash
+python caliper.py EVAL --url https://xoanouteiro.dev?query=test&info=1 --parameter query --syntax-type LFI
+```
+
+Testing for SQLi:
+
+``` bash
+python caliper.py EVAL --url https://xoanouteiro.dev?query=test&info=1 --parameter query --syntax-type SQL
+```
+
+Keep in mind you can always expand the testing pool by writing new lines into the dictionaries at ./wordlists/
