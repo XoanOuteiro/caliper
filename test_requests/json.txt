@@ -1,0 +1,10 @@
+POST /api/login HTTP/1.1
+Host: example.com
+Content-Type: application/json
+Content-Length: 63
+
+{
+  "username": "xoan_hacker",
+  "password": "superSecreta123"
+}
+

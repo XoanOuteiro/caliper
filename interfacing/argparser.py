@@ -1,5 +1,8 @@
 import argparse
+
 from modules.evaluator import Evaluator
+from modules.jdi import JDIHandler
+
 from utils.utilities import Utilities
 from utils.reqhandler import ReqHandler
 
@@ -19,6 +22,36 @@ class Argparser:
 
     def __init__(self):
         self.build()
+
+
+    def parse_vector(self, args, request_item):
+        match args.Vector:
+            case "JDI":
+                self.instance_JDI(args, request_item)
+            case "OHT":
+                self.instance_OHT(args, request_item)
+            case "HVS":
+                self.instance_HVS(args, request_item)
+            case "RPC":
+                self.instance_RPC(args, request_item)
+
+    def instance_JDI(self, args, request_item):
+        if not args.min_size or not args.max_size:
+            Utilities.print_error_msg("MIN_SIZE/MAX_SIZE need to be set")
+        else:
+            try:
+                JDIHandler(request_item, int(args.min_size), int(args.max_size))
+            except Exception as error:
+                Utilities.print_error_msg("MIN_SIZE/MAX_SIZE are not numerical values")
+
+    def instance_OHT(self, args, request_item):
+        Utilities.print_error_msg("Not yet implemented")
+
+    def instance_HVS(self, args, request_item):
+        Utilities.print_error_msg("Not yet implemented")
+
+    def instance_RPC(self, args, request_item):
+        Utilities.print_error_msg("Not yet implemented")
 
     '''
     Check if CLI options are valid
@@ -54,6 +87,9 @@ class Argparser:
                 Utilities.print_error_msg("Request File is required on VEC mode")
             else:
                 serialized_req = ReqHandler(args.request_file, args.protocol)
+
+            # ALl general checks OK, begin module loading
+            self.parse_vector(args, serialized_req)
 
 
         # EVAL MODE CHECKS
