@@ -40,9 +40,9 @@ class Argparser:
             Utilities.print_error_msg("MIN_SIZE/MAX_SIZE need to be set")
         else:
             try:
-                JDIHandler(request_item, int(args.min_size), int(args.max_size))
+                JDIHandler(request_item, int(args.min_size), int(args.max_size), str(args.segment),int(args.code),bool(args.match_content))
             except Exception as error:
-                Utilities.print_error_msg("MIN_SIZE/MAX_SIZE are not numerical values")
+                Utilities.print_error_msg("MIN_SIZE/MAX_SIZE are not numerical values",print(error))
 
     def instance_OHT(self, args, request_item):
         Utilities.print_error_msg("Not yet implemented")
