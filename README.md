@@ -19,7 +19,7 @@ Current development state:
 
 | Mode | Vector/Syntax | State |
 | --- | --- | --- |
-| VEC | JDI | :x: - TBI |
+| VEC | JDI | :white_check_mark: |
 | VEC | OHT | :x: - TBI |
 | VEC | HVS | :x: - TBI |
 | VEC | RPC | :x: - TBI |
@@ -73,6 +73,15 @@ The Burp Suite plugin nowafpls (https://github.com/assetnote/nowafpls) populariz
 However it's not always posible to know how much junk data will be needed to succesfuly avoid a Firewall. Caliper offers an streamlined way of discovering the ammount of data that can be used to allow a previously-blocked payload passthrough
 
 By this vector this tool also doubles as a network stress-tester
+
+An example of running this command would be:
+
+``` bash
+python caliper.py VEC JDI --protocol http --segment "'OR='1'='1" --code 403 --request-file test_requests/datai.txt --min-size 1 --max-size 142 --match-content
+```
+
+Where min-size and max-size are in KB.
+
 
 #### Origin Header Tampering (OHT)
 WAFs can be caused to not inspect packages by modifying HTTP headers like X-Originating-IP, X-Forwarded-For, X-Remote-IP, X-Remote-Addr to local values such as 127.0.0.1 and 0.0.0.0 if the WAF is designed to "trust itself" or upstream proxies.
