@@ -12,6 +12,10 @@ ________  ________  ___       ___  ________  _______   ________
 
 Project by XoanOuteiro @ The Smoking GNU (thesmokinggnu.org)
 
+There´s an article on this apps usage at my webpage:
+
+[WAF Benchmarking With Caliper.py](https://xoanouteiro.dev/posts/es_caliper_waf_benchmarking/)
+
 ## THIS IS A WIP!!!
 Cloned versions may not be usable, stable versions will be on the releases tab.
 
