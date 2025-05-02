@@ -2,6 +2,9 @@ import argparse
 
 from modules.evaluator import Evaluator
 from modules.jdi import JDIHandler
+from modules.oht import OHTHandler
+from modules.hvs import HVSHandler
+from modules.rpc import RPCHandler
 
 from utils.utilities import Utilities
 from utils.reqhandler import ReqHandler
@@ -45,13 +48,22 @@ class Argparser:
                 Utilities.print_error_msg("MIN_SIZE/MAX_SIZE are not numerical values",print(error))
 
     def instance_OHT(self, args, request_item):
-        Utilities.print_error_msg("Not yet implemented")
+        try:
+            OHTHandler(request_item, str(args.segment), int(args.code), bool(args.match_content))
+        except Exception as error:
+            Utilities.print_error_msg(f"Couldn't instance OHTHandler: {error}")
 
     def instance_HVS(self, args, request_item):
-        Utilities.print_error_msg("Not yet implemented")
+        try:
+            HVSHandler(request_item, str(args.segment), int(args.code), bool(args.match_content))
+        except Exception as error:
+            Utilities.print_error_msg(f"Couldn't instance HVSHandler: {error}")
 
     def instance_RPC(self, args, request_item):
-        Utilities.print_error_msg("Not yet implemented")
+        try:
+            RPCHandler(request_item,str(args.segment),int(args.code),bool(args.match_content))
+        except Exception as error:
+            Utilities.print_error_msg("Couldnt instance RPCHandler due to argument errors.")
 
     '''
     Check if CLI options are valid
@@ -133,8 +145,8 @@ class Argparser:
         " Useful for when the WAF gives a 200 response code on blockage. (You will also receive a typical code-changed success message)")
 
         # POST-Based and POST-like Arguments
-        vec_parser.add_argument("--min-size", type=str, help="The minimum amount of Junk data to be used by JDI (in kilobytes)")
-        vec_parser.add_argument("--max-size", type=str, help="The maximum amount of Junk data to be used by JDI (in kilobytes)")
+        vec_parser.add_argument("--min-size", type=str, help="The minimum amount of Junk data to be used by JDI (in bytes)")
+        vec_parser.add_argument("--max-size", type=str, help="The maximum amount of Junk data to be used by JDI (in bytes)")
 
         # EVAL Mode subparser
         eval_parser = subparsers.add_parser('EVAL', help="Evaluation mode options")

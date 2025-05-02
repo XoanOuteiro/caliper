@@ -101,8 +101,8 @@ class JDIHandler:
                 return
 
         # Define search boundaries
-        min_bytes = self.min_size * 1024
-        max_bytes = self.max_size * 1024
+        min_bytes = self.min_size
+        max_bytes = self.max_size
         best_size = None
 
         # Test minimum size first to potentially skip binary search
@@ -118,11 +118,11 @@ class JDIHandler:
             )
             
             status = response.status_code
-            Utilities.print_success_msg(f"Sent ~{min_bytes // 1024}KB")
+            Utilities.print_success_msg(f"Sent {min_bytes}B")
             
             # If minimum size works, we're done
             if status != self.code:
-                Utilities.print_result_msg(f"Potential WAF bypass: Status code: {status} for {min_bytes // 1024}KB")
+                Utilities.print_result_msg(f"Potential WAF bypass: Status code: {status} for {min_bytes}B")
                 Utilities.print_result_msg(f"Minimum size already works!")
                 best_size = min_bytes
             else:
@@ -158,12 +158,12 @@ class JDIHandler:
                         )
                         
                         status = response.status_code
-                        Utilities.print_success_msg(f"Sent ~{mid // 1024}KB")
+                        Utilities.print_success_msg(f"Sent {mid}B")
                         
                         bypassed = (status != self.code)
                         
                         if bypassed:
-                            Utilities.print_result_msg(f"Potential WAF bypass: Status code: {status} for {mid // 1024}KB")
+                            Utilities.print_result_msg(f"Potential WAF bypass: Status code: {status} for {mid}B")
                             best_size = mid
                             high = mid - 1  # Look for smaller successful sizes
                         else:
@@ -178,7 +178,7 @@ class JDIHandler:
         
         # Final result
         if best_size:
-            Utilities.print_result_msg(f"Smallest successful junk size: {best_size // 1024}KB")
+            Utilities.print_result_msg(f"Smallest successful junk size: {best_size}B")
         else:
             Utilities.print_error_msg("No successful bypass found in the specified range")
 
