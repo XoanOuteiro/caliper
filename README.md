@@ -1,4 +1,4 @@
-# Caliper
+# Caliper Suite
 
 ```
 ________  ________  ___       ___  ________  _______   ________     
@@ -12,9 +12,12 @@ ________  ________  ___       ___  ________  _______   ________
 
 Project by XoanOuteiro @ The Smoking GNU (thesmokinggnu.org)
 
+The Caliper Suite helps pentesters and system administrators identify potential weaknesses in Web Application Firewalls (WAFs), offering insights into how attackers might exploit underlying vulnerabilities.
+
 There´s an article on this apps usage at my webpage:
 
 [WAF Benchmarking With Caliper.py](https://xoanouteiro.dev/posts/es_caliper_waf_benchmarking/)
+
 
 ## THIS IS A WIP!!!
 Cloned versions may not be usable, stable versions will be on the releases tab.
@@ -24,14 +27,16 @@ Current development state:
 | Mode | Vector/Syntax | State |
 | --- | --- | --- |
 | VEC | JDI | :white_check_mark: |
-| VEC | OHT | :x: - TBI |
-| VEC | HVS | :x: - TBI |
-| VEC | RPC | :x: - TBI |
+| VEC | OHT | :white_check_mark: |
+| VEC | HVS | :white_check_mark: |
+| VEC | RPC | :white_check_mark: |
 | EVAL | HTML | :white_check_mark: |
 | EVAL | SQL | :white_check_mark: |
 | EVAL | LFI | :white_check_mark: |
 
 TBI = To Be Implemented
+
+As of Beta-0.1 all base modules are implemented and tested.
 
 ## Legal & Ethical Considerations
 Using Caliper to interact with unauthorized systems is illegal and unethical. This tool is meant solely for educational and research purposes within controlled environments where you have explicit permission. Acceptable use cases include:
@@ -81,20 +86,41 @@ By this vector this tool also doubles as a network stress-tester
 An example of running this command would be:
 
 ``` bash
-python caliper.py VEC JDI --protocol http --segment "'OR='1'='1" --code 403 --request-file test_requests/datai.txt --min-size 1 --max-size 142 --match-content
+python caliper.py VEC JDI --protocol http --segment "'OR='1'='1" --code 403 --request-file test_requests/datai.txt --min-size 10 --max-size 142000 --match-content
 ```
 
-Where min-size and max-size are in KB.
+Where min-size and max-size are in bytes.
 
 
 #### Origin Header Tampering (OHT)
 WAFs can be caused to not inspect packages by modifying HTTP headers like X-Originating-IP, X-Forwarded-For, X-Remote-IP, X-Remote-Addr to local values such as 127.0.0.1 and 0.0.0.0 if the WAF is designed to "trust itself" or upstream proxies.
+OHT will also test all combinations of 2 Origin-like headers.
+
+An example on running this module:
+
+``` bash
+python caliper.py VEC OHT --protocol http --segment "'OR='1'='1" --code 403 --request-file test_requests/datai.txt
+```
 
 #### HTTP Verb Swap (HVS)
 A WAF may not evaluate requests with HTTP method PUT when it would evaluate the same request if it were using POST.
+405 response codes are NOT counted as potential bypasses, you may enable testing for GET and OPTIONS by uncommenting them from the source code.
+Content matching works with HVS but it will cause false positives.
+
+An example on running this module:
+
+``` bash
+python caliper.py VEC HVS --protocol http --segment "'OR='1'='1" --code 403 --request-file test_requests/datai.txt
+```
 
 #### Random Payload Capitalization (RPC)
 Payloads that are not case-sensitive (such as potential SQLi) can sometimes pass regex matching if they are randomly capitalized.
+
+An example on running this module:
+
+``` bash
+python caliper.py VEC RPC --protocol http --segment "'OR='1'='1" --code 403 --request-file test_requests/datai.txt
+```
 
 ## Evaluation Mode
 Focus on finding specific parts of a request that are either not blocked or reflected by the WAF. Instead of just trying to bypass the WAF with specific data (such as with Vector mode), you can use Eval Mode to set a GET parameter to identify useful items that can slip through. This is especially helpful for creating payloads like XSS attacks.
