@@ -51,6 +51,37 @@ Additionally, improper use of Caliper could pose serious security risks, such as
 
 By using Caliper, you agree to use it ethically and legally. You take full responsibility for how this tool is used. This tool must never be used for unauthorized access, military applications or unlawful financial gain.
 
+## Project Structure
+
+```
+.
+├── caliper.py
+├── install.sh
+├── interfacing
+│   └── argparser.py
+├── modules
+│   ├── evaluator.py
+│   ├── hvs.py
+│   ├── jdi.py
+│   ├── oht.py
+│   └── rpc.py
+├── README.md
+├── requirements.txt
+├── templates
+│   └── default.py
+├── test_requests
+│   ├── datai.txt
+│   └── json.txt
+├── utils
+│   ├── reqhandler.py
+│   └── utilities.py
+└── wordlists
+    ├── HTML.txt
+    ├── LFI.txt
+    ├── quotes.txt
+    └── SQL.txt
+```
+
 ## Installation
 
 1.  Clone the repository:
