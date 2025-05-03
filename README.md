@@ -178,3 +178,11 @@ python caliper.py EVAL --url https://xoanouteiro.dev?query=test&info=1 --paramet
 ```
 
 Keep in mind you can always expand the testing pool by writing new lines into the dictionaries at ./wordlists/
+
+## Architecture & Code
+
+![Sequence chart for Caliper Suite](https://github.com/XoanOuteiro/xoanouteiro.dev/blob/main/static/images/sequence.png)
+
+You can learn more about how this tool works at:
+
+[Caliper Suite's Architecture and Code](https://xoanouteiro.dev/posts/es_architecture_and_code_of_caliper)
